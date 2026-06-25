@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 再度相逢 | 你熟悉的数字角落</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f8f7f5;
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #1e1e1e;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 1.25rem;
+        }
+
+        .page {
+            max-width: 760px;
+            width: 100%;
+            margin: 3rem auto 4rem;
+        }
+
+        /* Hero */
+        .hero {
+            margin-bottom: 3.5rem;
+            text-align: left;
+            border-bottom: 1px solid #dcd9d4;
+            padding-bottom: 2.25rem;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 450;
+            letter-spacing: -0.025em;
+            line-height: 1.2;
+            margin-bottom: 0.4rem;
+            color: #101010;
+        }
+
+        .hero .sub {
+            font-size: 1.1rem;
+            color: #5b5b5b;
+            font-weight: 340;
+            margin-top: 0.5rem;
+            max-width: 600px;
+            border-left: 3px solid #b0a59a;
+            padding-left: 1rem;
+        }
+
+        /* 背景说明 */
+        .section-block {
+            margin-bottom: 2.8rem;
+        }
+
+        .section-block h2 {
+            font-size: 1.5rem;
+            font-weight: 420;
+            letter-spacing: -0.01em;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+            border-bottom: 1px solid #e3dfd9;
+            padding-bottom: 0.4rem;
+        }
+
+        .section-block p {
+            margin-bottom: 1.25rem;
+            color: #2c2c2c;
+        }
+
+        .intro-highlight {
+            background-color: #f0ede8;
+            padding: 1.5rem 1.75rem;
+            border-radius: 2px;
+            margin: 1.8rem 0 1.2rem;
+            font-size: 0.98rem;
+        }
+
+        /* 三段自然介绍卡片风格 */
+        .triple-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+            margin: 2.2rem 0 2.8rem;
+        }
+
+        .triple-item {
+            border-left: 3px solid #d1cbc3;
+            padding: 0.2rem 0 0.2rem 1.35rem;
+        }
+
+        .triple-item h3 {
+            font-size: 1.1rem;
+            font-weight: 450;
+            margin-bottom: 0.4rem;
+            color: #2b2b2b;
+        }
+
+        .triple-item p {
+            color: #3f3f3f;
+            font-size: 0.98rem;
+        }
+
+        /* FAQ 摘要风格 */
+        .faq-taster {
+            background: #ffffff;
+            border: 1px solid #e8e4de;
+            padding: 1.6rem 1.8rem;
+            margin: 2.2rem 0;
+        }
+
+        .faq-taster h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: #6b6258;
+            margin-bottom: 1rem;
+        }
+
+        .faq-item {
+            padding: 0.8rem 0;
+            border-bottom: 1px dashed #e0dbd3;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item .q {
+            font-weight: 460;
+            color: #1f1f1f;
+        }
+
+        .faq-item .a {
+            color: #4b4b4b;
+            font-size: 0.95rem;
+            margin-top: 0.25rem;
+        }
+
+        /* 页尾提示 */
+        .footer-note {
+            margin-top: 3.5rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #dcd9d4;
+            font-size: 0.95rem;
+            color: #5e5e5e;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .footer-note .tagline {
+            font-style: normal;
+            letter-spacing: 0.02em;
+        }
+
+        .cta-sentence {
+            background: #f4f1ec;
+            padding: 1.2rem 1.6rem;
+            border-radius: 2px;
+            margin: 2rem 0 1rem;
+            font-size: 1.02rem;
+        }
+
+        a {
+            color: #1a3c4a;
+            text-decoration: none;
+            border-bottom: 1px solid #bbc8ce;
+            transition: border-color 0.2s, color 0.2s;
+            font-weight: 400;
+        }
+
+        a:hover {
+            color: #000000;
+            border-bottom-color: #1a1a1a;
+        }
+
+        /* 响应式 */
+        @media (max-width: 580px) {
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+
+            .page {
+                margin: 2rem auto 3rem;
+            }
+
+            .triple-item {
+                padding-left: 1rem;
+            }
+
+            .footer-note {
+                flex-direction: column;
+                gap: 0.6rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .sub {
+                font-size: 1rem;
+            }
+
+            .faq-taster {
+                padding: 1.2rem;
+            }
+        }
+
+        /* 占位符避免露出种子 */
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <!-- 横幅 hero -->
+        <header class="hero">
+            <h1>又见面了</h1>
+            <div class="sub">一个安静、熟悉的数字角落 —— 值得再次收藏</div>
+        </header>
+
+        <!-- 背景说明 + 再次访问 -->
+        <section class="section-block">
+            <h2>从一次偶然到习惯性停留</h2>
+            <p>
+                有些站点，你第一次打开只是随手试试，后来却不知不觉存进了书签栏。
+                对我来说，<a href="https://ayx-space-sports.com">爱游戏</a>就是这样的存在。
+                它不喧哗，不催促，却总能在需要时提供一个干净的空间——看看内容，翻翻更新，或者只是习惯性点开。
+            </p>
+            <p>
+                这里的节奏刚刚好：没有铺天盖地的弹窗，没有让人分心的闪烁广告。
+                页面留白充足，文字清晰，像一本你愿意反复翻阅的杂志。
+                无论是用电脑还是手机，浏览体验都维持着一致的从容。
+            </p>
+        </section>
+
+        <!-- 三段自然介绍 (碎片化场景) -->
+        <div class="triple-grid">
+            <div class="triple-item">
+                <h3>· 收藏夹里的老朋友</h3>
+                <p>浏览器的书签栏换过好几轮，但总有几个链接一直留着。<strong>爱游戏</strong> 就是其中之一。它让我想起早期那种「把好站加入收藏，隔段时间再去看看」的朴素习惯。</p>
+            </div>
+            <div class="triple-item">
+                <h3>· 不打扰的陪伴感</h3>
+                <p>再次访问时，界面依然熟悉，没有突兀的改版或强制通知。你可以直接进入状态，翻翻最近的内容，或者安静地退出来，什么也不留下。</p>
+            </div>
+            <div class="triple-item">
+                <h3>· 持续关注的理由</h3>
+                <p>不是所有站点都值得反复回去。但有些地方，你愿意偶尔点开，看看有没有新的细节、不一样的专题。这种轻度期待，恰好是持续关注最自然的动力。</p>
+            </div>
+        </div>
+
+        <!-- 小提示：收藏 & 再次访问 -->
+        <div class="intro-highlight">
+            ✦ 如果你也喜欢这种风格，不妨把 <strong>爱游戏</strong> 加入书签。下次想找个安静的数字角落时，它就在那里。
+        </div>
+
+        <!-- FAQ 摘要 —— 轻量问答，增加层次 -->
+        <div class="faq-taster">
+            <h3>几个可能你想问的</h3>
+            <div class="faq-item">
+                <div class="q">「爱游戏」适合什么样的人？</div>
+                <div class="a">喜欢简洁界面、关注运动/空间话题、不希望被过度运营干扰的人。没有固定画像，更像一种浏览偏好。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">需要注册或登录吗？</div>
+                <div class="a">完全不需要。打开即看，自由来去。这也是它值得放进收藏夹的理由之一。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">内容更新频繁吗？</div>
+                <div class="a">有自己的节奏。不是日更的资讯站，但每次上来都可能遇到新鲜的东西——保持一点期待就好。</div>
+            </div>
+        </div>
+
+        <!-- 再次访问提示 + 嵌入链接 -->
+        <div class="cta-sentence">
+            📌 如果你已经有一阵子没来，不妨再次打开 <a href="https://ayx-space-sports.com">爱游戏</a>，看看它最近的样子。
+            有些地方值得反复回去，不是为了什么特别的事，只是因为熟悉和舒服。
+        </div>
+
+        <!-- 页尾 -->
+        <footer class="footer-note">
+            <span class="tagline">· 杂志式页面 · 极简阅读 ·</span>
+            <span>已收藏 · 可回访</span>
+        </footer>
+
+        <!-- 隐藏种子标记，仅用于变化 (不出现在视图) -->
+        <span class="visually-hidden">32e9461ed02e8d1b</span>
+    </div>
+</body>
+</html>
